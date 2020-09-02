@@ -1,0 +1,27 @@
+<launch> 
+
+			<node pkg='gmapping' type='slam_gmapping' name='slam_gmapping' output='log'>
+				<remap from='scan' to='front/scan'/>
+				<param name='map_update_interval' value='1'/>
+			</node>
+		
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="log">
+		<remap from="odom" to="boxer_velocity_controller/odom"/>
+
+		<rosparam file="$(find simulation_tests)/config/costmap_common_params.yaml" command="load" ns="global_costmap"/>
+		<rosparam file="$(find simulation_tests)/config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
+
+		<rosparam file="$(find simulation_tests)/config/odom_nav_params/local_costmap_params.yaml" command="load"/>
+		<rosparam file="$(find simulation_tests)/config/odom_nav_params/global_costmap_params.yaml" command="load"/>
+
+		<rosparam file="$(find simulation_tests)/config/move_base_params.yaml" command="load"/>
+		<param name='base_local_planner' value=dwa_local_planner/DWAPlannerROS/>		<rosparam>acc_lim_x: 1<rosparam>
+		<rosparam>acc_lim_theta: 1<rosparam>
+		<rosparam>max_vel_x: 1<rosparam>
+		<rosparam>max_vel_theta: 1<rosparam>
+		<rosparam>vx_samples: 5<rosparam>
+		<rosparam>vth_samples: 10<rosparam>
+		<rosparam>sim_time: 1.7<rosparam>
+		<rosparam>scaling_speed: 1<rosparam>
+	</node>
+</launch>
