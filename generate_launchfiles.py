@@ -29,12 +29,7 @@ rosparams_const['dwa'] ={'vx_samples':		'5',
 # TEB
 rosparams_var['teb'] =  {'min_obstacle_dis':['0.5', '0.8'],
 						'weight_obstacle':	['50', '80'] }
-rosparams_const['teb'] ={'footprint_model/type':		'line',
-						'footprint_model/line_start':	'[-0.1, 0]',
-						'footprint_model/line_end':		'[0.4, 0]',
-						'inflation_dist':				'0',
-						'enable_homotopy_classes': 		'false',
-						'max_number_classes': 			'2' }
+rosparams_const['teb'] ={'inflation_dist':				'0' }
 
 
 
@@ -103,9 +98,13 @@ for planner in planners:
 				f.write("<node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>\n")
 				f.write("	<param name='base_local_planner' value=" + base_local_planner[planner] + "/>\n")
 				f.write("	<remap from='odom' to='boxer_velocity_controller/odom'/>\n")
-				f.write("	<rosparam file='$(find simulation_tests)/config/odom_nav_params/local_costmap_params.yaml' command='load'/>\n")
-				f.write("	<rosparam file='$(find simulation_tests)/config/odom_nav_params/global_costmap_params.yaml' command='load'/>\n")
-				f.write("	<rosparam file='$(find simulation_tests)/config/move_base_params.yaml' command='load'/>\n")
+				f.write("	<rosparam file='$(find " + name + ")/config/local_costmap_params.yaml' command='load'/>\n")
+				f.write("	<rosparam file='$(find " + name + ")/config/global_costmap_params.yaml' command='load'/>\n")
+				f.write("	<rosparam file='$(find " + name + ")/config/move_base_params.yaml' command='load'/>\n")
+				f.write("	<rosparam file='$(find " + name + ")/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>\n")
+				f.write("	<rosparam file='$(find " + name + ")/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>\n")
+
+				f.write("	<rosparam file='$(find " + name + ")/config/" + planner + "_common_params.yaml'  command='load'/>\n")
 
 				# Rosparams const
 				for key in ['all',planner]:

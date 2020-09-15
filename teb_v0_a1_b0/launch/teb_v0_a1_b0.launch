@@ -6,17 +6,15 @@
 <node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
 	<param name='base_local_planner' value=teb_local_planner/TebLocalPlannerROS/>
 	<remap from='odom' to='boxer_velocity_controller/odom'/>
-	<rosparam file='$(find simulation_tests)/config/odom_nav_params/local_costmap_params.yaml' command='load'/>
-	<rosparam file='$(find simulation_tests)/config/odom_nav_params/global_costmap_params.yaml' command='load'/>
-	<rosparam file='$(find simulation_tests)/config/move_base_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/local_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/global_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/move_base_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
+	<rosparam file='$(find teb_v0_a1_b0)/config/teb_common_params.yaml'  command='load'/>
 	<rosparam>acc_lim_x: 1<rosparam>
 	<rosparam>acc_lim_theta: 1<rosparam>
 	<rosparam>max_vel_theta: 1<rosparam>
-	<rosparam>max_number_classes: 2<rosparam>
-	<rosparam>enable_homotopy_classes: false<rosparam>
-	<rosparam>footprint_model/line_end: [0.4, 0]<rosparam>
-	<rosparam>footprint_model/type: line<rosparam>
-	<rosparam>footprint_model/line_start: [-0.1, 0]<rosparam>
 	<rosparam>inflation_dist: 0<rosparam>
 		<rosparam>max_vel_x: 0.8<rosparam>
 		<rosparam>weight_obstacle: 80<rosparam>

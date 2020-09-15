@@ -6,9 +6,12 @@
 <node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
 	<param name='base_local_planner' value=dwa_local_planner/DWAPlannerROS/>
 	<remap from='odom' to='boxer_velocity_controller/odom'/>
-	<rosparam file='$(find simulation_tests)/config/odom_nav_params/local_costmap_params.yaml' command='load'/>
-	<rosparam file='$(find simulation_tests)/config/odom_nav_params/global_costmap_params.yaml' command='load'/>
-	<rosparam file='$(find simulation_tests)/config/move_base_params.yaml' command='load'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/local_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/global_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/move_base_params.yaml' command='load'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
+	<rosparam file='$(find dwa_v1_a1_b0)/config/dwa_common_params.yaml'  command='load'/>
 	<rosparam>acc_lim_x: 1<rosparam>
 	<rosparam>acc_lim_theta: 1<rosparam>
 	<rosparam>max_vel_theta: 1<rosparam>
