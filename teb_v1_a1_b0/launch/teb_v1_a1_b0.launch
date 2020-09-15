@@ -12,10 +12,10 @@
 	<rosparam file='$(find teb_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
 	<rosparam file='$(find teb_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
 	<rosparam file='$(find teb_v1_a1_b0)/config/teb_common_params.yaml'  command='load'/>
-	<param name='TebLocalPlannerROS/acc_lim_x' value='1'/>
-	<param name='TebLocalPlannerROS/acc_lim_y' value='0'/>
 	<param name='TebLocalPlannerROS/max_vel_theta' value='1'/>
 	<param name='TebLocalPlannerROS/max_vel_y' value='0'/>
+	<param name='TebLocalPlannerROS/acc_lim_x' value='1'/>
+	<param name='TebLocalPlannerROS/acc_lim_y' value='0'/>
 	<param name='TebLocalPlannerROS/acc_lim_theta' value='1'/>
 	<param name='TebLocalPlannerROS/inflation_dist' value='0'/>
 	<param name='TebLocalPlannerROS/max_vel_x' value='0.8'/>

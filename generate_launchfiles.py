@@ -95,7 +95,8 @@ for planner in planners:
 					os.makedirs(name)
 				if not os.path.exists(name + "/launch"):
 					os.makedirs(name + "/launch")
-
+				if os.path.exists(name + "/config"):
+					shutil.rmtree(name + "/config")
 				# Copy config folder
 				shutil.copytree("config", name + "/config")
 
