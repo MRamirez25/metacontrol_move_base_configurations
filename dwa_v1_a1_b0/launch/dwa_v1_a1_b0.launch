@@ -4,7 +4,7 @@
 	<param name='map_update_interval' value='1'/>
 </node>
 <node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
-	<param name='base_local_planner' value=dwa_local_planner/DWAPlannerROS/>
+	<param name='base_local_planner' value='dwa_local_planner/DWAPlannerROS'/>
 	<remap from='odom' to='boxer_velocity_controller/odom'/>
 	<rosparam file='$(find dwa_v1_a1_b0)/config/local_costmap_params.yaml' command='load'/>
 	<rosparam file='$(find dwa_v1_a1_b0)/config/global_costmap_params.yaml' command='load'/>
@@ -12,13 +12,21 @@
 	<rosparam file='$(find dwa_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
 	<rosparam file='$(find dwa_v1_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
 	<rosparam file='$(find dwa_v1_a1_b0)/config/dwa_common_params.yaml'  command='load'/>
-	<rosparam>acc_lim_x: 1<rosparam>
-	<rosparam>acc_lim_theta: 1<rosparam>
-	<rosparam>max_vel_theta: 1<rosparam>
-	<rosparam>vx_samples: 5<rosparam>
-	<rosparam>vth_samples: 10<rosparam>
-		<rosparam>max_vel_x: 0.8<rosparam>
-		<rosparam>sim_time: 1.0<rosparam>
-		<rosparam>scaling_speed: 1<rosparam>
+	<param name='DWAPlannerROS/acc_lim_x' value='1'/>
+	<param name='DWAPlannerROS/acc_lim_y' value='0'/>
+	<param name='DWAPlannerROS/max_vel_theta' value='1'/>
+	<param name='DWAPlannerROS/max_vel_y' value='0'/>
+	<param name='DWAPlannerROS/acc_lim_theta' value='1'/>
+	<param name='DWAPlannerROS/vx_samples' value='5'/>
+	<param name='DWAPlannerROS/vth_samples' value='10'/>
+	<param name='DWAPlannerROS/min_vel_trans' value='0'/>
+	<param name='DWAPlannerROS/min_vel_y' value='0'/>
+	<param name='DWAPlannerROS/min_vel_x' value='-1'/>
+	<param name='DWAPlannerROS/vy_samples' value='0'/>
+	<param name='DWAPlannerROS/acc_lim_trans' value='1'/>
+	<param name='DWAPlannerROS/max_vel_trans' value='1'/>
+	<param name='DWAPlannerROS/max_vel_x' value='0.8'/>
+	<param name='DWAPlannerROS/sim_time' value='1.7'/>
+	<param name='DWAPlannerROS/scaling_speed' value='1'/>
 </node>
 </launch>

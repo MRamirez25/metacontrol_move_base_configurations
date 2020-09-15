@@ -1,0 +1,4 @@
+DWAPlannerROS: 
+  #Trajectory scoring parameters
+  path_distance_bias: 32 #32
+  goal_distance_bias: 24 #24
