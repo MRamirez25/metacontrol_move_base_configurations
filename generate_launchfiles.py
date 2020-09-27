@@ -20,7 +20,7 @@ rosparams_var = dict()
 rosparams_const = dict()
 
 # All
-rosparams_var['all'] = {'max_vel_x': 		['1', '0.8'] }
+rosparams_var['all'] = {'max_vel_x': 		['1.0', '0.8'] }
 rosparams_const['all']={'max_vel_theta': 	'1',
 						'max_vel_y':		'0',
 						'acc_lim_x': 		'1',
@@ -28,7 +28,7 @@ rosparams_const['all']={'max_vel_theta': 	'1',
 						'acc_lim_theta':	'1' }
 # DWA
 rosparams_var['dwa'] =  {'sim_time': 		['1.0', '1.7'],
-						'scaling_speed': 	['1', '0.25'] }
+						'scaling_speed': 	['1.0', '0.25'] }
 rosparams_const['dwa'] ={'vx_samples':		'5',
 						'vy_samples':		'0',
 						'vth_samples':		'10',

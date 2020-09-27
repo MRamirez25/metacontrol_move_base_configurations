@@ -7,3 +7,6 @@ global_costmap:
   rolling_window: true
   width: 80
   height: 80
+
+  inflater_layer:
+    inflation_radius: 0.4 # maximum distance from obstacle at which a cost should be incurred

@@ -9,4 +9,7 @@ local_costmap:
   height: 5.0
   resolution: 0.01
 
+  inflater_layer:
+    inflation_radius: 0.2 # maximum distance from obstacle at which a cost should be incurred
+
 # More parameters: see costmap_2d documentation online

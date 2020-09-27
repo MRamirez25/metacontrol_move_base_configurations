@@ -12,21 +12,21 @@
 	<rosparam file='$(find dwa_v1_a0_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
 	<rosparam file='$(find dwa_v1_a0_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
 	<rosparam file='$(find dwa_v1_a0_b0)/config/dwa_common_params.yaml'  command='load'/>
-	<param name='DWAPlannerROS/max_vel_theta' value='1'/>
-	<param name='DWAPlannerROS/max_vel_y' value='0'/>
 	<param name='DWAPlannerROS/acc_lim_x' value='1'/>
 	<param name='DWAPlannerROS/acc_lim_y' value='0'/>
+	<param name='DWAPlannerROS/max_vel_theta' value='1'/>
+	<param name='DWAPlannerROS/max_vel_y' value='0'/>
 	<param name='DWAPlannerROS/acc_lim_theta' value='1'/>
 	<param name='DWAPlannerROS/vx_samples' value='5'/>
-	<param name='DWAPlannerROS/vy_samples' value='0'/>
 	<param name='DWAPlannerROS/vth_samples' value='10'/>
-	<param name='DWAPlannerROS/max_vel_trans' value='1'/>
 	<param name='DWAPlannerROS/min_vel_trans' value='0'/>
-	<param name='DWAPlannerROS/min_vel_x' value='-1'/>
 	<param name='DWAPlannerROS/min_vel_y' value='0'/>
+	<param name='DWAPlannerROS/min_vel_x' value='-1'/>
+	<param name='DWAPlannerROS/vy_samples' value='0'/>
 	<param name='DWAPlannerROS/acc_lim_trans' value='1'/>
-	<param name='DWAPlannerROS/max_vel_x' value='1'/>
+	<param name='DWAPlannerROS/max_vel_trans' value='1'/>
+	<param name='DWAPlannerROS/max_vel_x' value='1.0'/>
 	<param name='DWAPlannerROS/sim_time' value='1.0'/>
-	<param name='DWAPlannerROS/scaling_speed' value='1'/>
+	<param name='DWAPlannerROS/scaling_speed' value='1.0'/>
 </node>
 </launch>
