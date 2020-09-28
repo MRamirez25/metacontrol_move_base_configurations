@@ -134,15 +134,11 @@ for planner in planners:
 						f.write("	<param name='" + base_local_planner[planner][1] + "/" + rosparam_const + "' value='" + value + "'/>\n")
 				# Rosparams var
 				# all
-				idx = 0
 				for rosparam_var in rosparams_var['all'].keys():
-					if idx == 0:
-						value = rosparams_var['all'][rosparam_var][ida]
-					elif idx == 1:
-						value = rosparams_var['all'][rosparam_var][idb]
+					value = rosparams_var['all'][rosparam_var][idv]
+					print(rosparam_var + "' value='" + value)
 					# f.write("	<rosparam>" + rosparam_var + ': ' + value + "</rosparam>\n")
 					f.write("	<param name='" + base_local_planner[planner][1] + "/" + rosparam_var + "' value='" + value + "'/>\n")
-					idx += 1
 
 				# planner
 				idx = 0

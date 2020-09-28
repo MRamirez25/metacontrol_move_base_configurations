@@ -25,7 +25,7 @@
 	<param name='DWAPlannerROS/vy_samples' value='0'/>
 	<param name='DWAPlannerROS/acc_lim_trans' value='1'/>
 	<param name='DWAPlannerROS/max_vel_trans' value='1'/>
-	<param name='DWAPlannerROS/max_vel_x' value='0.8'/>
+	<param name='DWAPlannerROS/max_vel_x' value='1.0'/>
 	<param name='DWAPlannerROS/sim_time' value='1.7'/>
 	<param name='DWAPlannerROS/scaling_speed' value='0.25'/>
 </node>
