@@ -1,8 +1,4 @@
 <launch> 
-<node pkg='gmapping' type='slam_gmapping' name='slam_gmapping' output='log'>
-	<remap from='scan' to='front/scan'/>
-	<param name='map_update_interval' value='1'/>
-</node>
 <node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
 	<param name='base_local_planner' value='teb_local_planner/TebLocalPlannerROS'/>
 	<remap from='odom' to='boxer_velocity_controller/odom'/>
