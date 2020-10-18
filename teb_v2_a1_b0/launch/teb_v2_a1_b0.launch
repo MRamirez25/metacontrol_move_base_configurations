@@ -1,0 +1,21 @@
+<launch> 
+<node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
+	<param name='base_local_planner' value='teb_local_planner/TebLocalPlannerROS'/>
+	<remap from='odom' to='boxer_velocity_controller/odom'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/local_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/global_costmap_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/move_base_params.yaml' command='load'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='global_costmap'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/costmap_common_params.yaml'  command='load' ns='local_costmap'/>
+	<rosparam file='$(find teb_v2_a1_b0)/config/teb_common_params.yaml'  command='load'/>
+	<param name='TebLocalPlannerROS/acc_lim_x' value='1'/>
+	<param name='TebLocalPlannerROS/acc_lim_y' value='0'/>
+	<param name='TebLocalPlannerROS/max_vel_theta' value='1'/>
+	<param name='TebLocalPlannerROS/max_vel_y' value='0'/>
+	<param name='TebLocalPlannerROS/acc_lim_theta' value='1'/>
+	<param name='TebLocalPlannerROS/min_obstacle_dist' value='0.3'/>
+	<param name='TebLocalPlannerROS/max_vel_x' value='0.6'/>
+	<param name='TebLocalPlannerROS/weight_obstacle' value='80'/>
+	<param name='TebLocalPlannerROS/inflation_dist' value='0.3'/>
+</node>
+</launch>

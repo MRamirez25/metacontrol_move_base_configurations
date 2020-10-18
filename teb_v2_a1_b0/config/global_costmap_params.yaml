@@ -1,0 +1,12 @@
+global_costmap:
+  global_frame: map
+  robot_base_frame: base_link
+  update_frequency: 5.0
+  publish_frequency: 5.0
+  static_map: false # Determines whether or not the costmap should initialise itself based on a map served by the map_server
+  rolling_window: true
+  width: 80
+  height: 80
+
+  inflater_layer:
+    inflation_radius: 0.4 # maximum distance from obstacle at which a cost should be incurred

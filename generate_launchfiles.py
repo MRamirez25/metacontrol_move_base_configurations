@@ -20,7 +20,7 @@ rosparams_var = dict()
 rosparams_const = dict()
 
 # All
-rosparams_var['all'] = {'max_vel_x': 		['1.0', '0.8'] }
+rosparams_var['all'] = {'max_vel_x': 		['1.0', '0.8', '0.6', '0.4'] }
 rosparams_const['all']={'max_vel_theta': 	'1',
 						'max_vel_y':		'0',
 						'acc_lim_x': 		'1',
@@ -40,9 +40,9 @@ rosparams_const['dwa'] ={'vx_samples':		'5',
 
 
 # TEB
-rosparams_var['teb'] =  {'min_obstacle_dist':['0.3', '0.5'],
-						'weight_obstacle':	['50', '80'] }
-rosparams_const['teb'] ={'inflation_dist':				'0' }
+rosparams_var['teb'] =  {'inflation_dist':	 ['0.3', '0.4'],
+						'weight_obstacle':	 ['50', '80'] }
+rosparams_const['teb'] ={'min_obstacle_dist':'0.3' }
 
 
 ###########################################
@@ -85,7 +85,7 @@ def create_CMakeLists_txt(name):
 
 
 for planner in planners:
-	for idv in [0, 1]:
+	for idv in [0, 1, 2, 3]:
 		for ida in [0, 1]:
 			for idb in [0, 1]:
 				name = planner + '_v' + str(idv) + '_a' + str(ida) + '_b' + str(idb)
@@ -107,11 +107,12 @@ for planner in planners:
 				# Launch files
 				f= open(name + '/launch/' + name + ".launch","w+")
 				f.write("<launch> \n")
+				
 				# Slam
-				f.write("<node pkg='gmapping' type='slam_gmapping' name='slam_gmapping' output='log'>\n")
-				f.write("	<remap from='scan' to='front/scan'/>\n")
-				f.write("	<param name='map_update_interval' value='1'/>\n")
-				f.write("</node>\n")
+				# f.write("<node pkg='gmapping' type='slam_gmapping' name='slam_gmapping' output='log'>\n")
+				# f.write("	<remap from='scan' to='front/scan'/>\n")
+				# f.write("	<param name='map_update_interval' value='1'/>\n")
+				# f.write("</node>\n")
 
 				# move_base
 				f.write("<node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>\n")

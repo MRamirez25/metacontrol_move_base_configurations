@@ -1,0 +1,10 @@
+TebLocalPlannerROS:
+  # Footprint params
+  footprint_model:
+    type: "line"
+    line_start: [-0.1, 0]
+    line_end: [0.4, 0]
+
+  # Parallel Planning in distinctive Topologies
+  enable_homotopy_class_planning: false
+  max_number_classes: 2
