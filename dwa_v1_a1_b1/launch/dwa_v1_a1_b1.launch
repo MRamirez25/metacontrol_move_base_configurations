@@ -1,7 +1,8 @@
 <launch> 
 <node pkg='move_base' type='move_base' respawn='false' name='move_base' output='log'>
 	<param name='base_local_planner' value='dwa_local_planner/DWAPlannerROS'/>
-	<remap from='odom' to='boxer_velocity_controller/odom'/>
+	<remap from='odom' to='mobile_base_controller/odom'/>
+	<remap from='cmd_vel' to='nav_vel'/>
 	<rosparam file='$(find dwa_v1_a1_b1)/config/local_costmap_params.yaml' command='load'/>
 	<rosparam file='$(find dwa_v1_a1_b1)/config/global_costmap_params.yaml' command='load'/>
 	<rosparam file='$(find dwa_v1_a1_b1)/config/move_base_params.yaml' command='load'/>
